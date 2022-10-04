@@ -1,0 +1,15 @@
+.back1
+{
+background-color: rgb(243, 238, 231);
+list-style-image: url(file:///C:/Users/1111/Documents/GitHub/WeB-Lessons/Homework%203/checked_16.png)
+}
+.back2
+{
+    background-color: rgb(9, 151, 156);
+    list-style-image: url(file:///C:/Users/1111/Documents/GitHub/WeB-Lessons/Homework%203/unchecked_16.png)
+}
+.back3
+{
+    background-color: rgb(36, 219, 219) ;
+    list-style-image: url(file:///C:/Users/1111/Documents/GitHub/WeB-Lessons/Homework%203/unchecked_16.png)
+}
