@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tables 1</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table {
+            color: black;
+            background-color: rgb(197, 192, 192);
+            width: 100%;
+
+            border-collapse: collapse;
+            /* border-spacing: 10px; */
+        }
+        td,
+        th {
+            padding: 15px;
+        }
+
+        th {
+            text-transform: uppercase;
+        }
+        td {
+            text-align: center;
+        }
+        tr:nth-child(even) td:nth-child(even) 
+        {
+            background-color: rgb(221, 213, 213);
+        }
+        tr:nth-child(odd) td:nth-child(odd) 
+        {
+            background-color: rgb(167, 161, 161);
+        }
+        tr:nth-child(even) th:nth-child(even) 
+        {
+            background-color: rgb(221, 213, 213);
+        }
+        tr:nth-child(odd) th:nth-child(odd) 
+        {
+            background-color: rgb(167, 161, 161);
+        }
+      thead{
+        height: 100px;
+        color: white;
+      }
+      tfoot{
+        padding-bottom: 5px;
+      }
+      strong{
+        font-size: 45px;
+        text-align: center;
+      }
+      mark{
+        background-color: rgb(134, 133, 133);
+        padding: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border: 1px solid black;
+      }
+
+
+        
+    </style>
+</head>
+<body>
+    <table>
+    <thead>
+        <tr>
+            <th style="background-color:rgb(77, 77, 112) ;">Choose your plan</th>
+            <th style="background-color:rgb(56, 56, 88) ;">Starter <strong>$10</strong>per month</th>
+            <th style="background-color:rgb(39, 39, 102) ;">econom <strong>$30</strong>per month</th>
+            <th style="background-color:#15155a ;">standart <strong>$59</strong>per month</th>
+            <th style="background-color:#010135 ;">professional <strong>$99</strong>per month</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Amount of space</td>
+            <td>20GB</td>
+            <td>40GB</td>
+            <td>110GB</td>
+            <td>Unlimeted</td>
+        </tr>
+        <tr>
+            <td>Bandwidth per month</td>
+            <td>120GB</td>
+            <td>240GB</td>
+            <td>610GB</td>
+            <td>1300GB</td>
+        </tr>
+        <tr>
+            <td>Email accounts</td>
+            <td>1</td>
+            <td>15</td>
+            <td>60</td>
+            <td>Unlimeted</td>
+        </tr>
+        <tr>
+            <td>MySQL databases</td>
+            <td>1</td>
+            <td>15</td>
+            <td>60</td>
+            <td>Unlimeted</td>
+        </tr>
+        <tr>
+            <td>25h support</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>support tickets per month</td>
+            <td>2</td>
+            <td>6</td>
+            <td>14</td>
+            <td>20</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <th></th>
+            <th><mark>START</mark></th>
+            <th><mark>START</mark></th>
+            <th><mark>START</mark></th>
+            <th><mark>START</mark></th>
+        </tr>
+    </tfoot>
+</table>
+</body>
+</html>
