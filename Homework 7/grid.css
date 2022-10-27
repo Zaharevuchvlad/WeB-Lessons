@@ -1,0 +1,53 @@
+section {
+    box-sizing: border-box;
+    margin: 10%;
+    margin-top: 5%;
+    min-height: 100%;
+    display: grid;
+    gap: 10px;
+    align-items:center;
+}
+.mavatar, .favatar {
+    display: flex;
+}
+.mavatar {
+    grid-column: 3;
+}
+.favatar {
+    grid-column: 1;
+}
+.hourf {
+    color: gray;
+    text-align: right;
+    margin: 0;
+}
+.hourm {
+    color: gray;
+    text-align: left;
+    margin: 0;
+    margin-left: 10px;
+}
+.basef, .basem {
+    margin: 0;
+    padding-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+.ftext, .mtext {
+    overflow: hidden;
+    grid-column: 2;
+}
+.ftext {
+    background-color: pink;
+    border-radius: 30px 30px 30px 0px;
+
+}
+.ftext p, .mtext p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 16px;
+}
+.mtext{
+    background-color: lightblue;
+    border-radius: 30px 30px 0px 30px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .main {
+    background-color: rgb(48, 48, 90);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 5px;
+    height: calc(100vh - 16px);
+}
+body {
+    margin: 8px;
+}
+header {
+    display: flex;
+    padding: 1%;
+    margin: 15px;
+    justify-content: space-between;
+    background-color: rgb(138, 58, 58);
+    border-radius: 7px;
+}
+header div, footer, body div section {
+    color: white;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 10px;
+}
+header div {
+    background-color: rgb(138, 58, 58);
+}
+header div:nth-child(2){
+    margin-right: auto;
+    margin-left: 5%;
+}
+footer {
+    background-color: rgb(98, 40, 146);
+    padding: 3%;
+    margin: 15px;
+    border-radius: 7px;
+}
+body div section div:first-child {
+    background-color: rgb(116, 116, 48);
+}
+body div section div:nth-child(2) {
+    background-color: rgb(31, 127, 218);
+}
+body div section div:nth-child(3) {
+    background-color: rgb(39, 139, 97);
+}
+body div section div {
+    padding-left: 20px;
+    border-radius: 10px;
+    line-height: 70vh;
+}
+body div section div p {
+    display: inline-block;
+    line-height: normal;
+}
+
+body div section {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 3fr 1fr;  
+    min-height: 70%;
+    margin: 5px;
+    gap: 10px;
+}
+
+</style>
+
+<body>
+    <div class="main">
+        <header>
+            <div>Home</div>
+            <div>Search</div>
+            <div>Logout</div>
+        </header>
+
+        <section>
+            <div>
+                <p>Menu</p>
+            </div>
+            <div>
+                <p>Content</p>
+            </div>
+            <div>
+                <p>Right</p>
+            </div>
+        </section>
+        <footer>
+            <div> Footer</div>
+        </footer>
+    </div>
+</body>
+
+</html>
