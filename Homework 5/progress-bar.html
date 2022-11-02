@@ -12,10 +12,9 @@
     width: 40vw;
     height: 10vw;
     display: block;
-    margin: auto;
+    margin-left: 50vh;
     margin-top: 50vh;
     border: 5px solid orange;
-    position: relative;
 }
 
 #square {
@@ -24,25 +23,22 @@
     display: block;
     background-color: orange;
     border: 5px solid orange;
-    position: absolute;
-    margin: auto;
-    top: 50vh;
-    left: 30vw;
-    transition: all 3s;
-    animation: slide 2s ease 2s infinite alternate;
+    animation: slide 2s ease 2s infinite;
 }
 
 @keyframes slide {
     from {
-        left: 30vw;
+        margin-left: -25%;
     }
     to {
-        left: 59.5vw;
+        margin-left: 100%;
     }
 }
 </style>
 <body>
-    <div id="rectangle"></div>
-    <div id="square"></div>
+    <div id="rectangle">
+        <div id="square"></div>
+    </div>
+    
 </body>
 </html>
