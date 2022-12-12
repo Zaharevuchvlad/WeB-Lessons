@@ -37,9 +37,6 @@ namespace lab4_5
                 prumichenya.Print();
                 //person.Print();
 
-
-
-
             }
             else
             {
@@ -54,6 +51,7 @@ namespace lab4_5
         public int Height { get; set; }
         public int Length { get; set; }
     }
+
     #region prumichenya_odunac
     public sealed class Prumichenya
     {
@@ -73,7 +71,7 @@ namespace lab4_5
             box.Height = height;
             box.Length = length;
 
-            #region seats
+            #region seats comfortable
             for (int row = 0; row < rows / 3; row++)
             {
                 for (int column = 0; column < columns; column++)
@@ -122,6 +120,7 @@ namespace lab4_5
         #endregion
     }
     #endregion
+
     public class CChair
     {
         int _Comfortable { get; set; }
@@ -174,7 +173,7 @@ namespace lab4_5
 
         }
     }
-    class CCashier : Person
+    class  CCashier: Person
     {
         public CChair[,] _seat;
         public double? dlzir { get; set; }
@@ -214,10 +213,29 @@ namespace lab4_5
     }
     class COrator : Person
     {
-        public Orator(string name,int age): base(name,age)
+        public COrator(string name,int age): base(name,age)
         {
 
         }
     }
+    class CContent
+    {
+
+    }
+    class CManager
+    {
+
+    }
+    class CJournal
+    {
+
+    }
+    class Cdata
+    {
+
+    }
+
+
+
 }
 
