@@ -85,7 +85,7 @@ clearBtn.onclick = () => {
     list.innerHTML = "";
 }
 
-var tds = document.querySelectorAll('input')
+var tds = document.querySelectorAll('th')
 for(var i =0; i<tds.length; i++)
 {
     tds[i].addEventListener('click', function func(){
