@@ -6,29 +6,33 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace lab4_5
 {
-
+    public enum Actor
+    {
+        Orator,
+        Viewer
+    }
 
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введіть cost");
-
             Random rnd = new Random();
             int colum = 1;
             int row = 11;
-            int seat = 111;
-            Prumichenya prumichenya = new Prumichenya(rnd.Next(10, 20), rnd.Next(3, 6), rnd.Next(20, 35), seat, row, colum);
+            Prumichenya prumichenya = new Prumichenya(rnd.Next(10, 20), rnd.Next(3, 6), rnd.Next(20, 35), row, colum);
+
             //Person person = new Person(//"Bob", rnd.Next(18, 40));
-            CCashier cashier = new CCashier("Bob", 43,prumichenya.Seat);
-            CViewer viewer = new CViewer("andrey", 32);
-            COrator orator = new COrator("oleg", 21);
+          // CCashier cashier = new CCashier("Bob", 43, prumichenya.Seat);
+           // CViewer viewer = new CViewer("andrey", 32);
+            // COrator orator = new COrator("oleg", 21);
+           
 
 
             prumichenya._cost = Convert.ToInt32(Console.ReadLine());
@@ -36,6 +40,8 @@ namespace lab4_5
             {
                 prumichenya.Print();
                 //person.Print();
+                //CContent content = new CContent(rnd.Next(1,6));
+                Cdata data = new Cdata(rnd.Next(0, 6));
 
             }
             else
@@ -63,7 +69,7 @@ namespace lab4_5
         #endregion
 
         #region Methods
-        public Prumichenya(int width, int height, int length, int seat, int rows, int columns)
+        public Prumichenya(int width, int height, int length, int rows, int columns)
         {
             Seat = new CChair[rows, columns];
             box = new SBox();
@@ -103,19 +109,15 @@ namespace lab4_5
         {
             if (_instance == null)
             {
-                _instance = new Prumichenya(width, height, length, seat, row, column);
-                return _instance;
-
+                _instance = new Prumichenya(width, height, length, row, column);
             }
-            else
-            {
-                return _instance;
-            }
+            return _instance;
         }
         public void Print()
         {
-            Console.WriteLine($"Width prumichenya={box.Width}m; \nHeight prumichenya={box.Height}m; \nLength prumichenya={box.Length}m;");
-
+            Console.WriteLine($"Width prumichenya={box.Width}m;");
+            Console.WriteLine($"Height prumichenya={box.Height}m;");
+            Console.WriteLine($"Length prumichenya={box.Length}m;");
         }
         #endregion
     }
@@ -131,7 +133,7 @@ namespace lab4_5
         }
 
     }
-    abstract class Person
+    public abstract class Person
     {
         public string Name { get; set; }
         public string? Exspirens { get; set; }
@@ -139,6 +141,8 @@ namespace lab4_5
         public string Studens = "Studens";
         public string Junior = "Junior";
         public string Middle = "Middle";
+
+        public abstract Actor Type { get; set; }
         public Person(string name, int age)
         {
             Name = name;
@@ -156,9 +160,6 @@ namespace lab4_5
             {
                 Exspirens = Middle;
             }
-
-
-
         }
         public void Print()
         {
@@ -168,15 +169,18 @@ namespace lab4_5
     //--------------------------------
     class CViewer : Person
     {
+        public override Actor Type { get; set; }
         public CViewer(string name, int age) : base(name, age)
         {
-
+            Type = Actor.Viewer;
         }
     }
-    class  CCashier: Person
+    class CCashier : Person
     {
         public CChair[,] _seat;
         public double? dlzir { get; set; }
+        public override Actor Type { get; set; }
+
         public CCashier(string name, int age, CChair[,] seat) : base(name, age)
         {
             _seat = seat;
@@ -213,29 +217,108 @@ namespace lab4_5
     }
     class COrator : Person
     {
-        public COrator(string name,int age): base(name,age)
+        public override Actor Type { get; set; }
+        public COrator(string name, int age) : base(name, age)
         {
+            Type = Actor.Orator;
+        }
+
+     }
+    class CContent//++++++
+    {
+        public int _number;
+        public CContent(int number)
+        {
+            _number = number;
+
+            switch (_number)
+            {
+                case 1:
+                    Console.WriteLine("content");
+                    break;
+                case 2:
+                    Console.WriteLine("content1");
+                    break;
+                case 3:
+                    Console.WriteLine("content2");
+                    break;
+                case 4:
+                    Console.WriteLine("content3");
+                    break;
+                case 5:
+                    Console.WriteLine("content4");
+                    break;
+                case 6:
+                    Console.WriteLine("content5");
+                    break;
+            }
 
         }
     }
-    class CContent
-    {
+        class CManager : Person//+++++++
+        {
+            public override Actor Type { get; set; }
+            public Actor _vubir;
+            public CManager(string name, int age, Actor vubir) : base(name, age)
+            {
 
-    }
-    class CManager
-    {
+            }
+            public void Clasification(Person person)
+            {
+                SBadge badge = new SBadge();
+                badge.name = person.Name;
+                badge.position = person.Type;
+            }
+        }
+        class CJournal
+        {
 
-    }
-    class CJournal
-    {
+        }
+        class Cdata
+        {
+        int _n;
+           static Random rnd = new Random();
+           public string[] _day { get; set; } = {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Satuday"};
+            string[] _month { get; set; } = {"January","February","March","April","May","June",
+            "July","August","September","October","November","December"};
+            double? _year { get; set; } = rnd.Next(2004,2022);
+            public Cdata(int n)
+            {
+            _n = n;
+                switch(_n)
+                {
+                case 0:
+                    Console.WriteLine($"Day:{_day[0]}  Month:{_month[rnd.Next(1, 12)]} Year:{_year}");
+                    break;
+                case 1:
+                    Console.WriteLine($"Day:{_day[1]}  Month:{_month[rnd.Next(1,12)]} Year:{_year}");
+                        break;
+                    case 2:
+                    Console.WriteLine($"Day:{_day[2]}  Month:{_month[rnd.Next(1, 12)]} Year:{_year}"); ;
+                        break;
+                    case 3:
+                    Console.WriteLine($"Day:{_day[3]}  Month:{_month[rnd.Next(1, 12)]} Year:{_year}");
+                    break;
+                    case 4:
+                    Console.WriteLine($"Day:{_day[4]}  Month:{_month[rnd.Next(1, 12)]} Year:{_year}");
+                    break;
+                    case 5:
+                    Console.WriteLine($"Day:{_day[5]}  Month:{_month[rnd.Next(1, 12)]} Year:{_year}");
+                    break;
+                    case 6:
+                    Console.WriteLine($"Day:{_day[6]}  Month:{_month[rnd.Next(1, 12)]} Year:{_year}");
+                    break;
 
-    }
-    class Cdata
-    {
-
-    }
-
-
-
+                }
+            }
+        }
+        struct SBadge//++++++++++++
+        {
+            public string name;
+            public Actor position;
+        }
 }
+
+
+
 
