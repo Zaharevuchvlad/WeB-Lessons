@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\1111\\Documents\\GitHub\\WeB-Lessons\\CSharp\\lab work 4-5\\lab work 4-5\\lab work 4-5.csproj": {}
+    "C:\\Users\\1111\\Desktop\\lab work 4-5\\lab work 4-5\\lab work 4-5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\1111\\Documents\\GitHub\\WeB-Lessons\\CSharp\\lab work 4-5\\lab work 4-5\\lab work 4-5.csproj": {
+    "C:\\Users\\1111\\Desktop\\lab work 4-5\\lab work 4-5\\lab work 4-5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\1111\\Documents\\GitHub\\WeB-Lessons\\CSharp\\lab work 4-5\\lab work 4-5\\lab work 4-5.csproj",
+        "projectUniqueName": "C:\\Users\\1111\\Desktop\\lab work 4-5\\lab work 4-5\\lab work 4-5.csproj",
         "projectName": "lab work 4-5",
-        "projectPath": "C:\\Users\\1111\\Documents\\GitHub\\WeB-Lessons\\CSharp\\lab work 4-5\\lab work 4-5\\lab work 4-5.csproj",
+        "projectPath": "C:\\Users\\1111\\Desktop\\lab work 4-5\\lab work 4-5\\lab work 4-5.csproj",
         "packagesPath": "C:\\Users\\1111\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\1111\\Documents\\GitHub\\WeB-Lessons\\CSharp\\lab work 4-5\\lab work 4-5\\obj\\",
+        "outputPath": "C:\\Users\\1111\\Desktop\\lab work 4-5\\lab work 4-5\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\1111\\AppData\\Roaming\\NuGet\\NuGet.Config",
