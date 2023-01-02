@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace lab_work_4_5.Observer
 {
-     public interface IObservable
+    public interface IObservable
     {
          void AddObserver(IObserver observer);
          void RemoveObserver(IObserver observer);
